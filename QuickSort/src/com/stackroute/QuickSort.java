@@ -6,7 +6,13 @@ import java.util.Scanner;
  *This class is used to perform quick sort
  */
 public class QuickSort {
-    public static void quicksort(int[] array, int start, int end]) {
+    public static void main(String[] args) {
+        int[] array = {4, 5, 1, 2, 3, 8};
+        quicksort(array, 0, array.length - 1);
+        for(int i=0;i<array.length;i++){
+            System.out.println(array[i]);
+        }
+    public static void quicksort(int[] array, int start, int end) {
         int partition = partition(array, start, end);
         if (partition - 1 > start) {
             quicksort(array, start, end);
@@ -31,11 +37,9 @@ public class QuickSort {
         return start;
 
     }
+
 }
 
-public static void main(String[]args){
-        int[]array={4,5,1,2,3.8};
-        quicksort(array,0,array.length-1);
-        System.out.println(Arrays.toString(array));
-        }
-}
+
+
+
