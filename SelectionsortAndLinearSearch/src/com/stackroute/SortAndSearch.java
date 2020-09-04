@@ -1,5 +1,7 @@
 package com.stackroute;
+
 import java.util.Scanner;
+
 /*
  *This class contains methods to sort
  */
@@ -50,17 +52,17 @@ public class SortAndSearch {
                 return i;
         }
 
-       return -1;
+        return -1;
     }
+
     public static void main(String[] args) {
         String[] string = getDetails();
         sortData(string);
         int value = doSearch(string);
-        if(value == -1){
-           System.out.println("not found");
-       }
-       else{
-           System.out.println("Found");
-       }
+        if (value == -1) {
+            System.out.println("not found");
+        } else {
+            System.out.println("Found");
+        }
     }
 }

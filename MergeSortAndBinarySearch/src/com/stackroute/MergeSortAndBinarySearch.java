@@ -1,8 +1,5 @@
-
 package com.stackroute;
-
 import java.util.Scanner;
-
 /*
  *This class contains methods to sort the elements using merge sort and search the element using binary search
  */
@@ -17,8 +14,6 @@ public class MergeSortAndBinarySearch {
         }
         return array;
     }
-
-
     public static String[] mergeSort(String[] array) {
         if (array.length >= 2) {
             String[] left = new String[array.length / 2];
@@ -36,7 +31,6 @@ public class MergeSortAndBinarySearch {
         }
         return array;
     }
-
     public static void merge(String[] array, String[] left, String[] right) {
         int sizeOne = 0;
         int sizeTwo = 0;
