@@ -7,6 +7,7 @@ public class MergeSortAndBinarySearch {
     public static String[] getDetails() {
         Scanner reader = new Scanner(System.in);
         int i;
+        //reads elements from user
         System.out.println("Enter elements");
         String[] array = new String[10];
         for (i = 0; i < 10; i++) {
@@ -16,25 +17,24 @@ public class MergeSortAndBinarySearch {
     }
     public static String[] mergeSort(String[] array) {
         if (array.length >= 2) {
-            String[] left = new String[array.length / 2];
-            String[] right = new String[array.length - array.length / 2];
-
-            for (int i = 0; i < left.length; i++) {
-                left[i] = array[i];
+            String[] arrayPartOne = new String[array.length / 2];
+            String[] arrayPartTwo = new String[array.length - array.length / 2];
+            for (int i = 0; i < arrayPartOne.length; i++) {
+                arrayPartOne[i] = array[i];
             }
-            for (int i = 0; i < right.length; i++) {
-                right[i] = array[i + array.length / 2];
+            for (int i = 0; i < arrayPartTwo.length; i++) {
+                arrayPartTwo[i] = array[i + array.length / 2];
             }
-            mergeSort(left);
-            mergeSort(right);
-            merge(array, left, right);
+            mergeSort(arrayPartOne);
+            mergeSort(arrayPartTwo);
+            merge(array, arrayPartOne, arrayPartTwo);
         }
         return array;
     }
+    //this method is used to perform mergesort
     public static void merge(String[] array, String[] left, String[] right) {
         int sizeOne = 0;
         int sizeTwo = 0;
-
         for (int i = 0; i < array.length; i++) {
             if (sizeTwo >= right.length || (sizeOne < left.length && left[sizeOne].compareToIgnoreCase(right[sizeOne]) < 0)) {
                 array[i] = left[sizeOne];
@@ -46,7 +46,7 @@ public class MergeSortAndBinarySearch {
         }
 
     }
-
+    //this method is used to search the desired element
     public static int doSearch(String[] array) {
         int low = 0;
         int high = array.length - 1;
